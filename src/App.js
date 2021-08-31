@@ -95,12 +95,12 @@ class App extends Component {
         <div className="auth-wrapper container mt-3">
           <div className="auth-inner">
             <Switch>
-              <Route exact path={["/","/home"]} component={() => <Home logOut = {this.logOut} currUser = {this.state.currentUser}/>} />
+              <Route exact path={["/","/home"]} component={(routeProps) => <Home {...routeProps} logOut = {this.logOut} currUser = {this.state.currentUser}/>} />
               <Route path="/login" component={Login} />
               <Route path="/register" component={SignUp} />
-              <Route path="/upload" component={() => <UploadFiles logOut = {this.logOut}/>} />
-              <Route path="/download" component={() => <DownloadFiles logOut = {this.logOut}/>} />
-              <Route path="/profile" component={() => <Profile logOut = {this.logOut}/>}/>
+              <Route path="/upload" component={(routeProps) => <UploadFiles {...routeProps} logOut = {this.logOut}/>} />
+              <Route path="/download" component={(routeProps) => <DownloadFiles {...routeProps} logOut = {this.logOut}/>} />
+              <Route path="/profile" component={(routeProps) => <Profile {...routeProps} logOut = {this.logOut}/>}/>
             </Switch>
           </div>
         </div>

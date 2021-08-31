@@ -44,7 +44,7 @@ class DownloadFiles extends Component {
 
         if(this.checkBtn.context._errors.length === 0) {
             FilesService.getFiles(this.state.entity).then(() => {
-                this.props.history.push("/download");
+                this.props.history.push("/");
                     window.location.reload();
             },
             error => {
